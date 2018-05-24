@@ -1,0 +1,38 @@
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
+ */
+ @import "../node_modules/tailwindcss/css/preflight.css";
+ 
+ /**
+  * Here you would add any of your custom component classes; stuff that you'd
+  * want loaded *before* the utilities so that the utilities could still
+  * override them.
+  */
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* textarea:focus {
+    outline: none
+  } */
+
+  h1, h2, h3 , h4, h5, p {
+    margin-bottom: 1rem;
+  }
+ 
+ /**
+  * This injects all of Tailwind's utility classes, generated based on your
+  * config file.
+  */
+ @import "../node_modules/tailwindcss/css/utilities.css";
+ 
+ /**
+  * Here you would add any custom utilities you need that don't come out of the
+  * box with Tailwind.
+  */
+  
