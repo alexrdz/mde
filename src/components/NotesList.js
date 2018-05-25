@@ -6,7 +6,9 @@ function NotesList (props) {
   const notesList = notes.map(note => <NotesListItem key={note} note={note} handleNoteClick={handleNoteClick} />)
 
   return (
-    <ul className="p-4 absolute pin-r pin-b" role="navigation">
+    <ul 
+      className="p-4 list-reset border-b" 
+      role="navigation">
       {notesList}
     </ul>
   );

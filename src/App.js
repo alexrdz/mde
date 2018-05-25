@@ -18,7 +18,7 @@ class App extends Component {
     });
 
     this.state = {
-      markdownText: null,
+      markdownText: '',
       title: '',
       savedNotes: []
     }
@@ -83,28 +83,35 @@ class App extends Component {
 
     return (
       <div className="h-screen">
+
+
         
-        <NotesList notes={savedNotes} handleNoteClick={this.handleNoteClick} />
 
         <div className="flex bg-grey-lighter text-grey-darker">
 
-          <textarea 
+        <div className="w-1/5 p-4 h-screen bg-grey">
+          <NotesList notes={savedNotes} handleNoteClick={this.handleNoteClick} />
+          <div className="p-4">
+            <label htmlFor="note-title" className="mr-2">Save this note</label>
+            <input id="note-title" className="p-2 border border-grey-light mr-2" type="text" onChange={this.handleTitleChange} />
+            <button onClick={this.handleSubmit}>Save</button>
+          </div>
+        </div>
+        
+        
+        <textarea 
           autoFocus
-          className="w-1/2 p-6 bg-grey-lighter text-grey-darker bg-white"
+          className="w-2/5 p-6 bg-grey-lighter text-grey-darker bg-white"
           value={this.state.markdownText}
           onChange={this.handleTextChange}
           >
           </textarea>
 
           
-          <div className="w-1/2 h-screen p-6" dangerouslySetInnerHTML={{__html: html}} />
+          <div className="w-2/5 h-screen p-6" dangerouslySetInnerHTML={{__html: html}} />
         </div>
 
-        <p className="absolute pin-b ml-4">
-          <label htmlFor="note-title" className="mr-2">Save this note</label>
-          <input id="note-title" className="p-2 border border-grey-light mr-2" type="text" onChange={this.handleTitleChange} />
-          <button onClick={this.handleSubmit}>Save</button>
-        </p>
+        
       </div>
     );
   }

@@ -6,7 +6,7 @@ function NotesListItem (props) {
   return (
     <li 
       onClick={() => handleNoteClick(note)} 
-      className="cursor-pointer"
+      className=" mb-2 cursor-pointer underline hover:no-underline"
       >
       {note}
     </li>
